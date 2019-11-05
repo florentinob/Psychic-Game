@@ -1,35 +1,25 @@
- var computerChoices = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+var computerChoices = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
- var wins = 0;
- var losses = 0;
- var guessesLeft = 9;
- var guessesMade = [];
+var wins = 0;
+var losses = 0;
+var guesses = 0;
+var guessesLeft = 9;
+var guessesMade = [];
 
- var confirmLetter = prompt("What Letter Do You Choose?");
+var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+document.querySelector(.list).style.display = "none";
 
- if (confirmLetter) {
-     alert("You Win Champ!");
- } else {
-     alert("Wrong Answer, Try Again!");
-     location.reload();
- }
- 
- document.onkeyup = function(event) {
-     var userGuess = event.key;
+function updateGuessesLeft() {
+	document.querySelector('#guessesleft').innerHTML = "Guesses Left:" + guessesLeft;
+};
 
-     var computerGuess = 
-     computerChoices[Math.floor(Math.random() * computerChoices.length)];
+function updateLetterToGuess() {
+	this.letterToGuess = this.computerChoices[Math.floor(Math.random() * this.computerChoices.length)];
+};
 
-     if (computerChoices.includes(userGuess)) {
-         if (userGuess === computerGuess) {
-             wins++;
-             guessArray.push(userGuess);
-             chances--;
-         }
+function updateGuessesSoFar() {
+	document.querySelector('#guessesmade').innerHTML = "Your Guesses So Far:" + guessesMade.join(', ');
+};
 
-         else if (userGuess !== computerGuess) {
-             losses++;
-             guessArray.push(userGuess);
-             chances--;
-         }
+
 

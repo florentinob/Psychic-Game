@@ -5,21 +5,7 @@ var losses = 0;
 var guesses = 0;
 var guessesLeft = 9;
 var guessesMade = [];
+var letterToGuess = null;
 
 var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-document.querySelector(.list).style.display = "none";
-
-function updateGuessesLeft() {
-	document.querySelector('#guessesleft').innerHTML = "Guesses Left:" + guessesLeft;
-};
-
-function updateLetterToGuess() {
-	this.letterToGuess = this.computerChoices[Math.floor(Math.random() * this.computerChoices.length)];
-};
-
-function updateGuessesSoFar() {
-	document.querySelector('#guessesmade').innerHTML = "Your Guesses So Far:" + guessesMade.join(', ');
-};
-
-
 

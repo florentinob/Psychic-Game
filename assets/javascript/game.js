@@ -13,7 +13,7 @@
      alert("Wrong Answer, Try Again!");
      location.reload();
  }
-
+ 
  document.onkeyup = function(event) {
      var userGuess = event.key;
 
@@ -33,12 +33,3 @@
              chances--;
          }
 
-         if (chances ===0) {
-             alert("You're Running Out Of Guesses!");
-             location.reload();
-         }
-         else if (losses === 9) {
-             alert("You Are Out Guesses. You Lose!");
-         }
-     }
- }

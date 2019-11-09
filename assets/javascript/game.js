@@ -25,12 +25,10 @@ var newGame = function() {
 document.onkeyup = function(event) {
    var userGuess = event.key;
    console.log(userGuess);
-   if (userGuess == guessesSoFar) {
-       
-   } else if (userGuess == computerChoices) {
-
-    
-   };
+   if (guessesSoFar.indexOf(userGuess) >= 0 ) {
+     alert ("You can only use a letter once! Try Again!")
+     return " "
+   };       
    left--;
    guessesSoFar.push(userGuess);
    soFar();
@@ -45,5 +43,5 @@ document.onkeyup = function(event) {
        losses++;
        document.getElementById("losses").innerHTML = "Losses:" + losses;
        newGame();
-   } 
-};
+   }
+};      
